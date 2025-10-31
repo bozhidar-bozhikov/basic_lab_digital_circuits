@@ -1,0 +1,76 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity generic_register_tb is
+end generic_register_tb;
+
+architecture behav of generic_register_tb is
+    component generic_register
+        Generic (N : integer := 8);
+        Port (
+            clk, reset, enable    : in  STD_LOGIC;
+            D      : in  STD_LOGIC_VECTOR(N-1 downto 0);
+            Q      : out STD_LOGIC_VECTOR(N-1 downto 0)
+        );
+    end component;
+    
+    -- Test a 8-bit register
+    signal clk, reset, enable    : STD_LOGIC := '0';
+    signal D      : STD_LOGIC_VECTOR(7 downto 0) := "00000000";
+    signal Q      : STD_LOGIC_VECTOR(7 downto 0);
+    
+    constant clk_period : time := 20 ns;
+    
+begin
+    -- Instantiate 4-bit register
+    uut: generic_register
+        Generic map (N => 8)
+        Port map (
+            clk    => clk,
+            reset  => reset,
+            enable => enable,
+            D      => D,
+            Q      => Q
+        );
+    
+    -- Clock generation
+    clk_process: process
+    begin
+        clk <= '0';
+        wait for clk_period/2;
+        clk <= '1';
+        wait for clk_period/2;
+    end process;
+    
+    -- Stimulus
+    stim_process: process
+    begin
+        -- Test 1: Reset
+        reset <= '1';
+        D <= "11111111";
+        enable <= '1';
+        wait for 40 ns;
+        
+        -- Test 2: Release reset, load data
+        reset <= '0';
+        D <= "10101010";
+        enable <= '1';
+        wait for 40 ns;
+        
+        -- Test 3: Change D without enable (should not load)
+        D <= "01010101";
+        enable <= '0';
+        wait for 40 ns;
+        
+        -- Test 4: Enable again (should load new data)
+        enable <= '1';
+        wait for 40 ns;
+        
+        -- Test 5: Load different value
+        D <= "11000011";
+        wait for 40 ns;
+        
+        wait;
+    end process;
+    
+end behav;
