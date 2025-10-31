@@ -21,9 +21,9 @@ VFCFNBVJ9c7L6dE@Q5lIJb3
 !s100 j:791=ENA5Hk:cOT2KSa82
 Z6 OV;C;10.5b;63
 32
-Z7 !s110 1761909320
+Z7 !s110 1761911937
 !i10b 1
-Z8 !s108 1761909320.000000
+Z8 !s108 1761911937.000000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/flipy.vhd|
 Z10 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/flipy.vhd|
 !i113 1
@@ -127,7 +127,7 @@ R23
 R11
 R12
 Egeneric_register_tb
-Z24 w1761907957
+Z24 w1761910543
 R2
 R3
 R0
@@ -139,11 +139,11 @@ V=119JdTbo1FOgXM^P0z>]3
 !s100 V`?X4:gzJK=6`=?:n2]`<2
 R6
 32
-R7
+Z27 !s110 1761911938
 !i10b 1
-R8
-Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/generic_register_tb.vhd|
-Z28 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/generic_register_tb.vhd|
+Z28 !s108 1761911938.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/generic_register_tb.vhd|
+Z30 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/generic_register_tb.vhd|
 !i113 1
 R11
 R12
@@ -153,91 +153,95 @@ R3
 DEx4 work 19 generic_register_tb 0 22 =119JdTbo1FOgXM^P0z>]3
 l23
 L7
-VGBNN1K7Qn_]zPeZj6cPCa0
-!s100 ;AzZ^k08odGM;H`_Xm?n`3
+VE0E2l@N2ETiaI0bFS_k3_3
+!s100 FWPo]ibb7_>oYKjzaOWe<1
 R6
 32
-R7
-!i10b 1
-R8
 R27
+!i10b 1
 R28
+R29
+R30
 !i113 1
 R11
 R12
 Eone_shot
-Z29 w1761909300
+Z31 w1761909300
 R2
 R3
 R0
-Z30 8one_shot.vhd
-Z31 Fone_shot.vhd
+Z32 8C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd
+Z33 FC:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd
 l0
 L4
-V[X14zeg0U<@n27bG_Jhm?1
+V>]YC]I<C8FPk_V6GYg0dz0
 !s100 4Q;FV[c6T5c_z]ZE=5lk]2
 R6
 32
-Z32 !s110 1761909678
+R27
 !i10b 1
-Z33 !s108 1761909678.000000
-Z34 !s90 -reportprogress|300|one_shot.vhd|
-Z35 !s107 one_shot.vhd|
-!i113 1
-R12
-Abehav
-R2
-R3
-DEx4 work 8 one_shot 0 22 [X14zeg0U<@n27bG_Jhm?1
-l14
-L11
-VcYGW73n?0<ocUC7kbH6Lg0
-!s100 WUP[Uzj8Yc@I^nLlJYXiY2
-R6
-32
-R32
-!i10b 1
-R33
-R34
-R35
-!i113 1
-R12
-Eone_shot_tb
-Z36 w1761909851
-R2
-R3
-R0
-Z37 8C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
-Z38 FC:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
-l0
-L4
-Vk5h0ZlRhY4I@YERzeWci>2
-!s100 nmClXLFIMM[_Vi?X`Wdn]0
-R6
-32
-Z39 !s110 1761909854
-!i10b 1
-Z40 !s108 1761909854.000000
-Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
-Z42 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
+R28
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd|
+Z35 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd|
 !i113 1
 R11
 R12
 Abehav
 R2
 R3
-DEx4 work 11 one_shot_tb 0 22 k5h0ZlRhY4I@YERzeWci>2
-l25
-L8
-ViNTOB8XJ^@aAJ^m1ECXmb2
-!s100 8XW6Q4=@59P[U]Nb?X`F:0
+DEx4 work 8 one_shot 0 22 >]YC]I<C8FPk_V6GYg0dz0
+l14
+L11
+Vdj9B[RM>WI243ikdiR8>^1
+!s100 WUP[Uzj8Yc@I^nLlJYXiY2
 R6
 32
-R39
+R27
 !i10b 1
+R28
+R34
+R35
+!i113 1
+R11
+R12
+Eone_shot_tb
+Z36 w1761911931
+Z37 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R2
+R3
+R0
+Z38 8C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
+Z39 FC:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
+l0
+L6
+VNc=9L[ASIe<bZ_]T]^ZH30
+!s100 ;^ki4hVDf0PA7QG3JjH7L3
+R6
+32
+R27
+!i10b 1
+R28
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
+Z41 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
+!i113 1
+R11
+R12
+Abehav
+R37
+R2
+R3
+Z42 DEx4 work 11 one_shot_tb 0 22 Nc=9L[ASIe<bZ_]T]^ZH30
+l22
+L9
+VY=a9nR@=E_hIOLoPX8dWS1
+!s100 2]cf>T>MD;C3<;H7`V7ah0
+R6
+32
+R27
+!i10b 1
+R28
 R40
 R41
-R42
 !i113 1
 R11
 R12

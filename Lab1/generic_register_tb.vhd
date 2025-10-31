@@ -41,29 +41,28 @@ begin
     
     stim_process: process
     begin
-        -- Test 1: Reset
         reset <= '1';
         D <= "11111111";
+	report "Applied rising edge at " & time'image(now);
         enable <= '1';
         wait for 40 ns;
         
-        -- Test 2: Release reset, load data
         reset <= '0';
         D <= "10101010";
+	report "Applied rising edge at " & time'image(now);
         enable <= '1';
         wait for 40 ns;
         
-        -- Test 3: Change D without enable
         D <= "01010101";
+	report "Applied rising edge at " & time'image(now);
         enable <= '0';
         wait for 40 ns;
         
-        -- Test 4: Enable again
         enable <= '1';
         wait for 40 ns;
         
-        -- Test 5: Load different value
         D <= "11000011";
+	report "Applied rising edge at " & time'image(now);
         wait for 40 ns;
         
         wait;
