@@ -166,7 +166,7 @@ R30
 R11
 R12
 Eone_shot
-Z31 w1761909300
+Z31 w1762215087
 R2
 R3
 R0
@@ -174,44 +174,44 @@ Z32 8C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd
 Z33 FC:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd
 l0
 L4
-V>]YC]I<C8FPk_V6GYg0dz0
-!s100 4Q;FV[c6T5c_z]ZE=5lk]2
+VeSF7<MHho0InlzGW2GA]B1
+!s100 TH?5A?TQh=>`i3>eo:8UQ0
 R6
 32
-R27
+Z34 !s110 1762215092
 !i10b 1
-R28
-Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd|
-Z35 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd|
+Z35 !s108 1762215092.000000
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd|
+Z37 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot.vhd|
 !i113 1
 R11
 R12
 Abehav
 R2
 R3
-DEx4 work 8 one_shot 0 22 >]YC]I<C8FPk_V6GYg0dz0
-l14
-L11
-Vdj9B[RM>WI243ikdiR8>^1
-!s100 WUP[Uzj8Yc@I^nLlJYXiY2
+DEx4 work 8 one_shot 0 22 eSF7<MHho0InlzGW2GA]B1
+l17
+L13
+V7I7=O3G9i73i@`TD`CCmL0
+!s100 6h95nF?oGcG_Yk]2Q5dAB0
 R6
 32
-R27
-!i10b 1
-R28
 R34
+!i10b 1
 R35
+R36
+R37
 !i113 1
 R11
 R12
 Eone_shot_tb
-Z36 w1761911931
-Z37 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z38 w1761911931
+Z39 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
 R2
 R3
 R0
-Z38 8C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
-Z39 FC:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
+Z40 8C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
+Z41 FC:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd
 l0
 L6
 VNc=9L[ASIe<bZ_]T]^ZH30
@@ -221,16 +221,16 @@ R6
 R27
 !i10b 1
 R28
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
-Z41 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
+Z43 !s107 C:/Programming/University/basic_lab_digital_circuits/Lab1/one_shot_tb.vhd|
 !i113 1
 R11
 R12
 Abehav
-R37
+R39
 R2
 R3
-Z42 DEx4 work 11 one_shot_tb 0 22 Nc=9L[ASIe<bZ_]T]^ZH30
+DEx4 work 11 one_shot_tb 0 22 Nc=9L[ASIe<bZ_]T]^ZH30
 l22
 L9
 VY=a9nR@=E_hIOLoPX8dWS1
@@ -240,8 +240,8 @@ R6
 R27
 !i10b 1
 R28
-R40
-R41
+R42
+R43
 !i113 1
 R11
 R12

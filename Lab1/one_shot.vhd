@@ -3,37 +3,49 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity one_shot is
     Port (
-        sys_clk, reset, trigger_i    : in  STD_LOGIC;
+        sys_clk    : in  STD_LOGIC;
+        reset      : in  STD_LOGIC;
+        trigger_i  : in  STD_LOGIC;
         pulse_o    : out STD_LOGIC
     );
 end one_shot;
 
 architecture behav of one_shot is
-    signal state, next_state      : std_logic := '0';
+    type state_type is (IDLE, PULSE, WAIT_LOW);
+    signal state, next_state : state_type;
     
 begin
     state_memory: process(reset, sys_clk)
     begin
         if reset = '1' then
-            state <= '0';
+            state <= IDLE;
         elsif rising_edge(sys_clk) then
             state <= next_state;
         end if;
     end process state_memory;
     
-    next_state_process: process(reset, trigger_i, state)
+    next_state_process: process(state, trigger_i)
     begin
-        if reset = '1' then
-            next_state <= '0';
-        elsif rising_edge(trigger_i) then
-            next_state <= '1';
-        elsif state = '1' then
-            next_state <= '0';
-        else
-            next_state <= state;
-        end if;
+        case state is
+            when IDLE =>
+                if trigger_i = '1' then
+                    next_state <= PULSE;
+                else
+                    next_state <= IDLE;
+                end if;
+                
+            when PULSE =>
+                next_state <= WAIT_LOW;
+                
+            when WAIT_LOW =>
+                if trigger_i = '0' then
+                    next_state <= IDLE;
+                else
+                    next_state <= WAIT_LOW;
+                end if;
+        end case;
     end process next_state_process;
     
-    pulse_o <= state;
+    pulse_o <= '1' when state = PULSE else '0';
     
 end behav;
