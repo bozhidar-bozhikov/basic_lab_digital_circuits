@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "seg_h_h[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_h[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_h[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_h[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_h[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_h[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_h[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_l[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_l[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_l[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_l[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_l[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_l[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_h_l[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_h[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_h[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_h[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_h[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_h[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_h[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_h[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_l[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_l[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_l[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_l[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_l[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_l[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_l_l[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_data",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

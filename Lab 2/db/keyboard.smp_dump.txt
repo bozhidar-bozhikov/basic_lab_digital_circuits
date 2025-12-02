@@ -1,0 +1,13 @@
+
+State Machine - |keyboard_driver_display|keyboard:keyboard_inst|state
+Name state.STOP state.PARITY state.DATA state.IDLE 
+state.IDLE 0 0 0 0 
+state.DATA 0 0 1 1 
+state.PARITY 0 1 0 1 
+state.STOP 1 0 0 1 
+
+State Machine - |keyboard_driver_display|keyboard:keyboard_inst|one_shot:oneshot_inst|state
+Name state.WAIT_LOW state.PULSE state.IDLE 
+state.IDLE 0 0 0 
+state.PULSE 0 1 1 
+state.WAIT_LOW 1 0 1 
