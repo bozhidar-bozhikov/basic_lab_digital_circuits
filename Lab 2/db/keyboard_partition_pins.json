@@ -4,131 +4,219 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "seg_h_h[0]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_h[1]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_h[2]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_h[3]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_h[4]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_h[5]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_h[6]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_l[0]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_l[1]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_l[2]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_l[3]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_l[4]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_l[5]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_h_l[6]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_h[0]",
+					"name" : "HEX2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_h[1]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_h[2]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_h[3]",
+					"name" : "HEX2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_h[4]",
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_h[5]",
+					"name" : "HEX2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_h[6]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_l[0]",
+					"name" : "HEX3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_l[1]",
+					"name" : "HEX3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_l[2]",
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_l[3]",
+					"name" : "HEX3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_l[4]",
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_l[5]",
+					"name" : "HEX3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "seg_l_l[6]",
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
-					"name" : "clock",
+					"name" : "LEDR[0]",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "LEDR[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ps2_data",
+					"name" : "LEDR[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ps2_clk",
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[12]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[13]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[14]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[15]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[16]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[17]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_DAT",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_CLK",
 					"strict" : false
 				}
 			]
