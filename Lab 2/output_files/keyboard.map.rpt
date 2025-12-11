@@ -1,5 +1,5 @@
 Analysis & Synthesis report for keyboard
-Thu Dec 11 00:32:28 2025
+Thu Dec 11 15:24:39 2025
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -13,16 +13,13 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |decoder_top|scancode_decoder:decoder_inst|keyevent_reg
-  9. State Machine - |decoder_top|scancode_decoder:decoder_inst|state
- 10. State Machine - |decoder_top|keyboard:keyboard_inst|state
- 11. State Machine - |decoder_top|keyboard:keyboard_inst|one_shot:oneshot_inst|state
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  8. State Machine - |top_task2|keyboard:keyboard_inst|state
+  9. State Machine - |top_task2|keyboard:keyboard_inst|one_shot:oneshot_inst|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -48,16 +45,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 11 00:32:28 2025       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 11 15:24:39 2025       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; keyboard                                    ;
-; Top-level Entity Name              ; decoder_top                                 ;
+; Top-level Entity Name              ; top_task2                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 128                                         ;
-;     Total combinational functions  ; 111                                         ;
-;     Dedicated logic registers      ; 68                                          ;
-; Total registers                    ; 68                                          ;
-; Total pins                         ; 62                                          ;
+; Total logic elements               ; 101                                         ;
+;     Total combinational functions  ; 68                                          ;
+;     Dedicated logic registers      ; 51                                          ;
+; Total registers                    ; 51                                          ;
+; Total pins                         ; 46                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -71,7 +68,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; decoder_top        ; keyboard           ;
+; Top-level entity name                                            ; top_task2          ; keyboard           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -173,45 +170,44 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
-; scancode_decoder.vhd             ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/scancode_decoder.vhd ;         ;
-; globals.vhd                      ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/globals.vhd          ;         ;
 ; hex_to_7seg.vhd                  ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/hex_to_7seg.vhd      ;         ;
 ; one_shot.vhd                     ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/one_shot.vhd         ;         ;
 ; keyboard.vhd                     ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/keyboard.vhd         ;         ;
-; decoder_top.vhd                  ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd      ;         ;
+; scancode_display.vhd             ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/scancode_display.vhd ;         ;
+; top_task2.vhd                    ; yes             ; User VHDL File  ; C:/Programming/University/basic_lab_digital_circuits/Lab 2/top_task2.vhd        ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 128            ;
-;                                             ;                ;
-; Total combinational functions               ; 111            ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 75             ;
-;     -- 3 input functions                    ; 26             ;
-;     -- <=2 input functions                  ; 10             ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 111            ;
-;     -- arithmetic mode                      ; 0              ;
-;                                             ;                ;
-; Total registers                             ; 68             ;
-;     -- Dedicated logic registers            ; 68             ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 62             ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 68             ;
-; Total fan-out                               ; 772            ;
-; Average fan-out                             ; 2.55           ;
-+---------------------------------------------+----------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 101         ;
+;                                             ;             ;
+; Total combinational functions               ; 68          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 62          ;
+;     -- 3 input functions                    ; 0           ;
+;     -- <=2 input functions                  ; 6           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 68          ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 51          ;
+;     -- Dedicated logic registers            ; 51          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 46          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 51          ;
+; Total fan-out                               ; 547         ;
+; Average fan-out                             ; 2.59        ;
++---------------------------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,51 +215,23 @@ refer to the applicable agreement for further details.
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name      ; Library Name ;
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+------------------+--------------+
-; |decoder_top                       ; 111 (17)            ; 68 (16)                   ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |decoder_top                                              ; decoder_top      ; work         ;
-;    |hex_to_7seg:hex0_inst|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |decoder_top|hex_to_7seg:hex0_inst                        ; hex_to_7seg      ; work         ;
-;    |hex_to_7seg:hex1_inst|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |decoder_top|hex_to_7seg:hex1_inst                        ; hex_to_7seg      ; work         ;
-;    |hex_to_7seg:hex2_inst|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |decoder_top|hex_to_7seg:hex2_inst                        ; hex_to_7seg      ; work         ;
-;    |hex_to_7seg:hex3_inst|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |decoder_top|hex_to_7seg:hex3_inst                        ; hex_to_7seg      ; work         ;
-;    |keyboard:keyboard_inst|        ; 25 (23)             ; 27 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |decoder_top|keyboard:keyboard_inst                       ; keyboard         ; work         ;
-;       |one_shot:oneshot_inst|      ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |decoder_top|keyboard:keyboard_inst|one_shot:oneshot_inst ; one_shot         ; work         ;
-;    |scancode_decoder:decoder_inst| ; 41 (41)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |decoder_top|scancode_decoder:decoder_inst                ; scancode_decoder ; work         ;
+; |top_task2                         ; 68 (0)              ; 51 (0)                    ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |top_task2                                                ; top_task2        ; work         ;
+;    |keyboard:keyboard_inst|        ; 26 (24)             ; 27 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|keyboard:keyboard_inst                         ; keyboard         ; work         ;
+;       |one_shot:oneshot_inst|      ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|keyboard:keyboard_inst|one_shot:oneshot_inst   ; one_shot         ; work         ;
+;    |scancode_display:display_inst| ; 42 (0)              ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|scancode_display:display_inst                  ; scancode_display ; work         ;
+;       |hex_to_7seg:hex0|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|scancode_display:display_inst|hex_to_7seg:hex0 ; hex_to_7seg      ; work         ;
+;       |hex_to_7seg:hex1|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|scancode_display:display_inst|hex_to_7seg:hex1 ; hex_to_7seg      ; work         ;
+;       |hex_to_7seg:hex2|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|scancode_display:display_inst|hex_to_7seg:hex2 ; hex_to_7seg      ; work         ;
+;       |hex_to_7seg:hex3|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|scancode_display:display_inst|hex_to_7seg:hex3 ; hex_to_7seg      ; work         ;
+;       |hex_to_7seg:hex4|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|scancode_display:display_inst|hex_to_7seg:hex4 ; hex_to_7seg      ; work         ;
+;       |hex_to_7seg:hex5|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_task2|scancode_display:display_inst|hex_to_7seg:hex5 ; hex_to_7seg      ; work         ;
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |decoder_top|scancode_decoder:decoder_inst|keyevent_reg                                                                                                                                              ;
-+------------------------+----------------------+------------------------+------------------------+----------------------+----------------------+----------------------+----------------------+------------------------+
-; Name                   ; keyevent_reg.KEY_NUM ; keyevent_reg.KEY_RESET ; keyevent_reg.KEY_ENTER ; keyevent_reg.KEY_DIV ; keyevent_reg.KEY_MUL ; keyevent_reg.KEY_SUB ; keyevent_reg.KEY_ADD ; keyevent_reg.KEY_OTHER ;
-+------------------------+----------------------+------------------------+------------------------+----------------------+----------------------+----------------------+----------------------+------------------------+
-; keyevent_reg.KEY_OTHER ; 0                    ; 0                      ; 0                      ; 0                    ; 0                    ; 0                    ; 0                    ; 0                      ;
-; keyevent_reg.KEY_ADD   ; 0                    ; 0                      ; 0                      ; 0                    ; 0                    ; 0                    ; 1                    ; 1                      ;
-; keyevent_reg.KEY_SUB   ; 0                    ; 0                      ; 0                      ; 0                    ; 0                    ; 1                    ; 0                    ; 1                      ;
-; keyevent_reg.KEY_MUL   ; 0                    ; 0                      ; 0                      ; 0                    ; 1                    ; 0                    ; 0                    ; 1                      ;
-; keyevent_reg.KEY_DIV   ; 0                    ; 0                      ; 0                      ; 1                    ; 0                    ; 0                    ; 0                    ; 1                      ;
-; keyevent_reg.KEY_ENTER ; 0                    ; 0                      ; 1                      ; 0                    ; 0                    ; 0                    ; 0                    ; 1                      ;
-; keyevent_reg.KEY_RESET ; 0                    ; 1                      ; 0                      ; 0                    ; 0                    ; 0                    ; 0                    ; 1                      ;
-; keyevent_reg.KEY_NUM   ; 1                    ; 0                      ; 0                      ; 0                    ; 0                    ; 0                    ; 0                    ; 1                      ;
-+------------------------+----------------------+------------------------+------------------------+----------------------+----------------------+----------------------+----------------------+------------------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------+
-; State Machine - |decoder_top|scancode_decoder:decoder_inst|state        ;
-+---------------+---------------+---------------+------------+------------+
-; Name          ; state.IGNORE2 ; state.IGNORE1 ; state.BUSY ; state.IDLE ;
-+---------------+---------------+---------------+------------+------------+
-; state.IDLE    ; 0             ; 0             ; 0          ; 0          ;
-; state.BUSY    ; 0             ; 0             ; 1          ; 1          ;
-; state.IGNORE1 ; 0             ; 1             ; 0          ; 1          ;
-; state.IGNORE2 ; 1             ; 0             ; 0          ; 1          ;
-+---------------+---------------+---------------+------------+------------+
-
-
-Encoding Type:  One-Hot
 +--------------------------------------------------------------------+
-; State Machine - |decoder_top|keyboard:keyboard_inst|state          ;
+; State Machine - |top_task2|keyboard:keyboard_inst|state            ;
 +--------------+------------+--------------+------------+------------+
 ; Name         ; state.STOP ; state.PARITY ; state.DATA ; state.IDLE ;
 +--------------+------------+--------------+------------+------------+
@@ -275,15 +243,15 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------+
-; State Machine - |decoder_top|keyboard:keyboard_inst|one_shot:oneshot_inst|state ;
-+----------------+----------------+-------------+---------------------------------+
-; Name           ; state.WAIT_LOW ; state.PULSE ; state.IDLE                      ;
-+----------------+----------------+-------------+---------------------------------+
-; state.IDLE     ; 0              ; 0           ; 0                               ;
-; state.PULSE    ; 0              ; 1           ; 1                               ;
-; state.WAIT_LOW ; 1              ; 0           ; 1                               ;
-+----------------+----------------+-------------+---------------------------------+
++-------------------------------------------------------------------------------+
+; State Machine - |top_task2|keyboard:keyboard_inst|one_shot:oneshot_inst|state ;
++----------------+----------------+-------------+-------------------------------+
+; Name           ; state.WAIT_LOW ; state.PULSE ; state.IDLE                    ;
++----------------+----------------+-------------+-------------------------------+
+; state.IDLE     ; 0              ; 0           ; 0                             ;
+; state.PULSE    ; 0              ; 1           ; 1                             ;
+; state.WAIT_LOW ; 1              ; 0           ; 1                             ;
++----------------+----------------+-------------+-------------------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -301,25 +269,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 68    ;
+; Total registers                              ; 51    ;
 ; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 68    ;
+; Number of registers using Asynchronous Clear ; 51    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 57    ;
+; Number of registers using Clock Enable       ; 45    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |decoder_top|shift_reg[2]                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |decoder_top|scancode_decoder:decoder_inst|Selector3 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |decoder_top|scancode_decoder:decoder_inst|Selector0 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -327,21 +284,19 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 62                          ;
-; cycloneiii_ff         ; 68                          ;
-;     CLR               ; 10                          ;
+; boundary_port         ; 46                          ;
+; cycloneiii_ff         ; 51                          ;
+;     CLR               ; 5                           ;
 ;     CLR SCLR          ; 1                           ;
-;     ENA CLR           ; 57                          ;
-; cycloneiii_lcell_comb ; 117                         ;
-;     normal            ; 117                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 75                          ;
+;     ENA CLR           ; 45                          ;
+; cycloneiii_lcell_comb ; 74                          ;
+;     normal            ; 74                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 6                           ;
+;         4 data inputs ; 62                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.94                        ;
+; Average LUT depth     ; 1.53                        ;
 +-----------------------+-----------------------------+
 
 
@@ -360,13 +315,10 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Thu Dec 11 00:32:16 2025
+    Info: Processing started: Thu Dec 11 15:24:27 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off keyboard -c keyboard
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file scancode_decoder.vhd
-    Info (12022): Found design unit 1: scancode_decoder-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/scancode_decoder.vhd Line: 15
-    Info (12023): Found entity 1: scancode_decoder File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/scancode_decoder.vhd Line: 5
 Info (12021): Found 1 design units, including 0 entities, in source file globals.vhd
     Info (12022): Found design unit 1: globals File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/globals.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file hex_to_7seg.vhd
@@ -381,37 +333,28 @@ Info (12021): Found 2 design units, including 1 entities, in source file keyboar
 Info (12021): Found 2 design units, including 1 entities, in source file keyboard.vhd
     Info (12022): Found design unit 1: keyboard-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/keyboard.vhd Line: 16
     Info (12023): Found entity 1: keyboard File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/keyboard.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file decoder_top.vhd
-    Info (12022): Found design unit 1: decoder_top-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 28
-    Info (12023): Found entity 1: decoder_top File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 6
-Info (12127): Elaborating entity "decoder_top" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "LEDR[7..4]" at decoder_top.vhd(23) File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 23
-Warning (10873): Using initial value X (don't care) for net "LEDG[8]" at decoder_top.vhd(24) File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 24
-Info (12128): Elaborating entity "keyboard" for hierarchy "keyboard:keyboard_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 78
+Info (12021): Found 2 design units, including 1 entities, in source file scancode_display.vhd
+    Info (12022): Found design unit 1: scancode_display-rtl File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/scancode_display.vhd Line: 20
+    Info (12023): Found entity 1: scancode_display File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/scancode_display.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file top_task2.vhd
+    Info (12022): Found design unit 1: top_task2-rtl File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/top_task2.vhd Line: 21
+    Info (12023): Found entity 1: top_task2 File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/top_task2.vhd Line: 4
+Info (12127): Elaborating entity "top_task2" for the top level hierarchy
+Info (12128): Elaborating entity "keyboard" for hierarchy "keyboard:keyboard_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/top_task2.vhd Line: 30
 Info (12128): Elaborating entity "one_shot" for hierarchy "keyboard:keyboard_inst|one_shot:oneshot_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/keyboard.vhd Line: 38
-Info (12128): Elaborating entity "scancode_decoder" for hierarchy "scancode_decoder:decoder_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 89
-Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "hex_to_7seg:hex0_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 119
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 23
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 23
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 23
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 23
-    Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 24
+Info (12128): Elaborating entity "scancode_display" for hierarchy "scancode_display:display_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/top_task2.vhd Line: 40
+Info (12128): Elaborating entity "hex_to_7seg" for hierarchy "scancode_display:display_inst|hex_to_7seg:hex0" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/scancode_display.vhd Line: 43
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 10
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 10
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Programming/University/basic_lab_digital_circuits/Lab 2/decoder_top.vhd Line: 10
-Info (21057): Implemented 192 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 55 output pins
-    Info (21061): Implemented 130 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Thu Dec 11 00:32:28 2025
+Info (21057): Implemented 147 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 101 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Thu Dec 11 15:24:39 2025
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:26
 

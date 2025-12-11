@@ -3,8 +3,6 @@ JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Programming/University/basic_lab_digital_circuits/Lab 2/output_files/") File("keyboard.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

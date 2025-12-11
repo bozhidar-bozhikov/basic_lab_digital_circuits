@@ -1,30 +1,12 @@
 
-State Machine - |decoder_top|scancode_decoder:decoder_inst|keyevent_reg
-Name keyevent_reg.KEY_NUM keyevent_reg.KEY_RESET keyevent_reg.KEY_ENTER keyevent_reg.KEY_DIV keyevent_reg.KEY_MUL keyevent_reg.KEY_SUB keyevent_reg.KEY_ADD keyevent_reg.KEY_OTHER 
-keyevent_reg.KEY_OTHER 0 0 0 0 0 0 0 0 
-keyevent_reg.KEY_ADD 0 0 0 0 0 0 1 1 
-keyevent_reg.KEY_SUB 0 0 0 0 0 1 0 1 
-keyevent_reg.KEY_MUL 0 0 0 0 1 0 0 1 
-keyevent_reg.KEY_DIV 0 0 0 1 0 0 0 1 
-keyevent_reg.KEY_ENTER 0 0 1 0 0 0 0 1 
-keyevent_reg.KEY_RESET 0 1 0 0 0 0 0 1 
-keyevent_reg.KEY_NUM 1 0 0 0 0 0 0 1 
-
-State Machine - |decoder_top|scancode_decoder:decoder_inst|state
-Name state.IGNORE2 state.IGNORE1 state.BUSY state.IDLE 
-state.IDLE 0 0 0 0 
-state.BUSY 0 0 1 1 
-state.IGNORE1 0 1 0 1 
-state.IGNORE2 1 0 0 1 
-
-State Machine - |decoder_top|keyboard:keyboard_inst|state
+State Machine - |top_task2|keyboard:keyboard_inst|state
 Name state.STOP state.PARITY state.DATA state.IDLE 
 state.IDLE 0 0 0 0 
 state.DATA 0 0 1 1 
 state.PARITY 0 1 0 1 
 state.STOP 1 0 0 1 
 
-State Machine - |decoder_top|keyboard:keyboard_inst|one_shot:oneshot_inst|state
+State Machine - |top_task2|keyboard:keyboard_inst|one_shot:oneshot_inst|state
 Name state.WAIT_LOW state.PULSE state.IDLE 
 state.IDLE 0 0 0 
 state.PULSE 0 1 1 

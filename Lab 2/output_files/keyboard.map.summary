@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Dec 11 00:32:28 2025
+Analysis & Synthesis Status : Successful - Thu Dec 11 15:24:39 2025
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : keyboard
-Top-level Entity Name : decoder_top
+Top-level Entity Name : top_task2
 Family : Cyclone IV E
-Total logic elements : 128
-    Total combinational functions : 111
-    Dedicated logic registers : 68
-Total registers : 68
-Total pins : 62
+Total logic elements : 101
+    Total combinational functions : 68
+    Dedicated logic registers : 51
+Total registers : 51
+Total pins : 46
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
