@@ -1,6 +1,0 @@
-
-State Machine - |led_register_top|one_shot:u_oneshot|state
-Name state.WAIT_LOW state.PULSE state.IDLE 
-state.IDLE 0 0 0 
-state.PULSE 0 1 1 
-state.WAIT_LOW 1 0 1 

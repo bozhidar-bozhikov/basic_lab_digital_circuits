@@ -1,0 +1,939 @@
+Analysis & Synthesis report for calculator
+Thu Jan 08 03:50:09 2026
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top_level|scancode_decoder:decoder_inst|next_event
+  9. State Machine - |top_level|scancode_decoder:decoder_inst|next_state
+ 10. State Machine - |top_level|scancode_decoder:decoder_inst|keyevent
+ 11. State Machine - |top_level|keyboard:keyboard_inst|state
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 25. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 26. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 27. Port Connectivity Checks: "statemachine:statemachine_inst"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jan 08 03:50:09 2026       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; calculator                                  ;
+; Top-level Entity Name              ; top_level                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 60                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; top_level          ; calculator         ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+; statemachine.vhd                 ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd                ;         ;
+; one_shot.vhd                     ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/one_shot.vhd                    ;         ;
+; led_register.vhd                 ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/led_register.vhd                ;         ;
+; generic_register.vhd             ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/generic_register.vhd            ;         ;
+; globals.vhd                      ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/globals.vhd                     ;         ;
+; bcd_to_7seg.vhd                  ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/bcd_to_7seg.vhd                 ;         ;
+; top_level.vhd                    ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd                   ;         ;
+; keyboard.vhd                     ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/keyboard.vhd                    ;         ;
+; scancode_decoder.vhd             ; yes             ; User VHDL File               ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/scancode_decoder.vhd            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/programming/university/ddc_lab/fpga/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/programming/university/ddc_lab/fpga/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/programming/university/ddc_lab/fpga/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal180.inc                   ; yes             ; Megafunction                 ; c:/programming/university/ddc_lab/fpga/quartus/libraries/megafunctions/aglobal180.inc      ;         ;
+; db/lpm_divide_ocm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_ocm.tdf           ;         ;
+; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_dnh.tdf      ;         ;
+; db/alt_u_div_eaf.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_eaf.tdf            ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/add_sub_7pc.tdf              ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/add_sub_8pc.tdf              ;         ;
+; db/lpm_divide_2jm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_2jm.tdf           ;         ;
+; db/sign_div_unsign_qlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_qlh.tdf      ;         ;
+; db/alt_u_div_87f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_87f.tdf            ;         ;
+; db/lpm_divide_5jm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_5jm.tdf           ;         ;
+; db/sign_div_unsign_tlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_tlh.tdf      ;         ;
+; db/alt_u_div_e7f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_e7f.tdf            ;         ;
+; db/lpm_divide_fkm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_fkm.tdf           ;         ;
+; db/sign_div_unsign_7nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_7nh.tdf      ;         ;
+; db/alt_u_div_2af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_2af.tdf            ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_q9m.tdf           ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_fkh.tdf      ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_i4f.tdf            ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_jhm.tdf           ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_bkh.tdf      ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_a4f.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+;                                             ;                ;
+; Total combinational functions               ; 0              ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 0              ;
+;     -- 3 input functions                    ; 0              ;
+;     -- <=2 input functions                  ; 0              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 0              ;
+;     -- arithmetic mode                      ; 0              ;
+;                                             ;                ;
+; Total registers                             ; 0              ;
+;     -- Dedicated logic registers            ; 0              ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 60             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; HEX0[0]~output ;
+; Maximum fan-out                             ; 1              ;
+; Total fan-out                               ; 60             ;
+; Average fan-out                             ; 0.50           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |top_level                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 60   ; 0            ; |top_level          ; top_level   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_level|scancode_decoder:decoder_inst|next_event                                                                                                                                ;
++----------------------+----------------------+--------------------+--------------------+--------------------+--------------------+----------------------+----------------------+--------------------+
+; Name                 ; next_event.KEY_OTHER ; next_event.KEY_MUL ; next_event.KEY_DIV ; next_event.KEY_SUB ; next_event.KEY_ADD ; next_event.KEY_ENTER ; next_event.KEY_RESET ; next_event.KEY_NUM ;
++----------------------+----------------------+--------------------+--------------------+--------------------+--------------------+----------------------+----------------------+--------------------+
+; next_event.KEY_NUM   ; 0                    ; 0                  ; 0                  ; 0                  ; 0                  ; 0                    ; 0                    ; 0                  ;
+; next_event.KEY_RESET ; 0                    ; 0                  ; 0                  ; 0                  ; 0                  ; 0                    ; 1                    ; 1                  ;
+; next_event.KEY_ENTER ; 0                    ; 0                  ; 0                  ; 0                  ; 0                  ; 1                    ; 0                    ; 1                  ;
+; next_event.KEY_ADD   ; 0                    ; 0                  ; 0                  ; 0                  ; 1                  ; 0                    ; 0                    ; 1                  ;
+; next_event.KEY_SUB   ; 0                    ; 0                  ; 0                  ; 1                  ; 0                  ; 0                    ; 0                    ; 1                  ;
+; next_event.KEY_DIV   ; 0                    ; 0                  ; 1                  ; 0                  ; 0                  ; 0                    ; 0                    ; 1                  ;
+; next_event.KEY_MUL   ; 0                    ; 1                  ; 0                  ; 0                  ; 0                  ; 0                    ; 0                    ; 1                  ;
+; next_event.KEY_OTHER ; 1                    ; 0                  ; 0                  ; 0                  ; 0                  ; 0                    ; 0                    ; 1                  ;
++----------------------+----------------------+--------------------+--------------------+--------------------+--------------------+----------------------+----------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------+
+; State Machine - |top_level|scancode_decoder:decoder_inst|next_state       ;
++--------------------+--------------------+----------------+----------------+
+; Name               ; next_state.RELEASE ; next_state.TWO ; next_state.ONE ;
++--------------------+--------------------+----------------+----------------+
+; next_state.ONE     ; 0                  ; 0              ; 0              ;
+; next_state.TWO     ; 0                  ; 1              ; 1              ;
+; next_state.RELEASE ; 1                  ; 0              ; 1              ;
++--------------------+--------------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top_level|scancode_decoder:decoder_inst|keyevent                                                                                                                                                             ;
++-------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-------------------------+-------------------------+-------------------------+
+; Name                    ; keyevent.KEY_NUM~reg0 ; keyevent.KEY_MUL~reg0 ; keyevent.KEY_DIV~reg0 ; keyevent.KEY_SUB~reg0 ; keyevent.KEY_ADD~reg0 ; keyevent.KEY_ENTER~reg0 ; keyevent.KEY_RESET~reg0 ; keyevent.KEY_OTHER~reg0 ;
++-------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-------------------------+-------------------------+-------------------------+
+; keyevent.KEY_OTHER~reg0 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 0                       ;
+; keyevent.KEY_RESET~reg0 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                       ; 1                       ; 1                       ;
+; keyevent.KEY_ENTER~reg0 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                       ; 0                       ; 1                       ;
+; keyevent.KEY_ADD~reg0   ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                       ; 0                       ; 1                       ;
+; keyevent.KEY_SUB~reg0   ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                       ; 0                       ; 1                       ;
+; keyevent.KEY_DIV~reg0   ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                       ; 0                       ; 1                       ;
+; keyevent.KEY_MUL~reg0   ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 1                       ;
+; keyevent.KEY_NUM~reg0   ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                       ; 0                       ; 1                       ;
++-------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-------------------------+-------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------+
+; State Machine - |top_level|keyboard:keyboard_inst|state            ;
++--------------+------------+--------------+------------+------------+
+; Name         ; state.STOP ; state.PARITY ; state.DATA ; state.IDLE ;
++--------------+------------+--------------+------------+------------+
+; state.IDLE   ; 0          ; 0            ; 0          ; 0          ;
+; state.DATA   ; 0          ; 0            ; 1          ; 1          ;
+; state.PARITY ; 0          ; 1            ; 0          ; 1          ;
+; state.STOP   ; 1          ; 0            ; 0          ; 1          ;
++--------------+------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++------------------------------------------------------------+--------------------+
+; Register name                                              ; Reason for Removal ;
++------------------------------------------------------------+--------------------+
+; keyboard:keyboard_inst|char_code_reg[0..7]                 ; Lost fanout        ;
+; keyboard:keyboard_inst|char_ready_reg                      ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_trigger                 ; Lost fanout        ;
+; scancode_decoder:decoder_inst|one_shot:one_shot|state      ; Lost fanout        ;
+; keyboard:keyboard_inst|one_shot:oneshot_inst|state         ; Lost fanout        ;
+; keyboard:keyboard_inst|bit_count[0..2]                     ; Lost fanout        ;
+; keyboard:keyboard_inst|data_shift[0..7]                    ; Lost fanout        ;
+; keyboard:keyboard_inst|parity_bit                          ; Lost fanout        ;
+; scancode_decoder:decoder_inst|one_shot:one_shot|next_state ; Lost fanout        ;
+; keyboard:keyboard_inst|one_shot:oneshot_inst|next_state    ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_NUM           ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_RESET         ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_ENTER         ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_ADD           ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_SUB           ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_DIV           ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_MUL           ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_event.KEY_OTHER         ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_state.ONE               ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_state.TWO               ; Lost fanout        ;
+; scancode_decoder:decoder_inst|next_state.RELEASE           ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_OTHER~reg0      ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_RESET~reg0      ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0      ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_ADD~reg0        ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_SUB~reg0        ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_DIV~reg0        ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_MUL~reg0        ; Lost fanout        ;
+; scancode_decoder:decoder_inst|keyevent.KEY_NUM~reg0        ; Lost fanout        ;
+; keyboard:keyboard_inst|state.IDLE                          ; Lost fanout        ;
+; keyboard:keyboard_inst|state.DATA                          ; Lost fanout        ;
+; keyboard:keyboard_inst|state.PARITY                        ; Lost fanout        ;
+; keyboard:keyboard_inst|state.STOP                          ; Lost fanout        ;
+; Total Number of Removed Registers = 49                     ;                    ;
++------------------------------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                              ;
++-------------------------------------------------------+--------------------+-----------------------------------------------------------------------------+
+; Register name                                         ; Reason for Removal ; Registers Removed due to This Register                                      ;
++-------------------------------------------------------+--------------------+-----------------------------------------------------------------------------+
+; keyboard:keyboard_inst|char_code_reg[6]               ; Lost Fanouts       ; keyboard:keyboard_inst|one_shot:oneshot_inst|state,                         ;
+;                                                       ;                    ; keyboard:keyboard_inst|data_shift[6], keyboard:keyboard_inst|data_shift[7], ;
+;                                                       ;                    ; keyboard:keyboard_inst|data_shift[5], keyboard:keyboard_inst|data_shift[4], ;
+;                                                       ;                    ; keyboard:keyboard_inst|data_shift[3], keyboard:keyboard_inst|data_shift[2], ;
+;                                                       ;                    ; keyboard:keyboard_inst|data_shift[1],                                       ;
+;                                                       ;                    ; keyboard:keyboard_inst|one_shot:oneshot_inst|next_state,                    ;
+;                                                       ;                    ; keyboard:keyboard_inst|state.STOP                                           ;
+; keyboard:keyboard_inst|bit_count[2]                   ; Lost Fanouts       ; keyboard:keyboard_inst|bit_count[1], keyboard:keyboard_inst|bit_count[0],   ;
+;                                                       ;                    ; keyboard:keyboard_inst|state.DATA, keyboard:keyboard_inst|state.PARITY      ;
+; scancode_decoder:decoder_inst|next_trigger            ; Lost Fanouts       ; scancode_decoder:decoder_inst|next_state.ONE,                               ;
+;                                                       ;                    ; scancode_decoder:decoder_inst|next_state.TWO                                ;
+; keyboard:keyboard_inst|char_code_reg[0]               ; Lost Fanouts       ; keyboard:keyboard_inst|data_shift[0]                                        ;
+; scancode_decoder:decoder_inst|one_shot:one_shot|state ; Lost Fanouts       ; scancode_decoder:decoder_inst|one_shot:one_shot|next_state                  ;
++-------------------------------------------------------+--------------------+-----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 260:1              ; 2 bits    ; 346 LEs       ; 18 LEs               ; 328 LEs                ; No         ; |top_level|scancode_decoder:decoder_inst|next_event.KEY_ENTER ;
+; 260:1              ; 5 bits    ; 865 LEs       ; 120 LEs              ; 745 LEs                ; No         ; |top_level|scancode_decoder:decoder_inst|next_event.KEY_NUM   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod5 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 16             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ocm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_2jm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 16             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ocm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_5jm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 16             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ocm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 10             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_fkm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 16             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ocm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 8              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 8              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "statemachine:statemachine_inst"                                                         ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; operator ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 60                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu Jan 08 03:49:55 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off calculator -c calculator
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file statemachine.vhd
+    Info (12022): Found design unit 1: statemachine-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 17
+    Info (12023): Found entity 1: statemachine File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file one_shot.vhd
+    Info (12022): Found design unit 1: one_shot-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/one_shot.vhd Line: 15
+    Info (12023): Found entity 1: one_shot File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/one_shot.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file led_register.vhd
+    Info (12022): Found design unit 1: register_led-Behavioral File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/led_register.vhd Line: 13
+    Info (12023): Found entity 1: register_led File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/led_register.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file generic_register.vhd
+    Info (12022): Found design unit 1: generic_register-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/generic_register.vhd Line: 15
+    Info (12023): Found entity 1: generic_register File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/generic_register.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file globals.vhd
+    Info (12022): Found design unit 1: globals File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/globals.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bcd_to_7seg.vhd
+    Info (12022): Found design unit 1: bcd_to_7seg-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/bcd_to_7seg.vhd Line: 12
+    Info (12023): Found entity 1: bcd_to_7seg File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/bcd_to_7seg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file top_level.vhd
+    Info (12022): Found design unit 1: top_level-structural File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 31
+    Info (12023): Found entity 1: top_level File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file keyboard.vhd
+    Info (12022): Found design unit 1: keyboard-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/keyboard.vhd Line: 16
+    Info (12023): Found entity 1: keyboard File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/keyboard.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file scancode_decoder.vhd
+    Info (12022): Found design unit 1: scancode_decoder-behav File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/scancode_decoder.vhd Line: 18
+    Info (12023): Found entity 1: scancode_decoder File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/scancode_decoder.vhd Line: 6
+Info (12127): Elaborating entity "top_level" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(89): object "current_operator" assigned a value but never read File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 89
+Info (12128): Elaborating entity "keyboard" for hierarchy "keyboard:keyboard_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 125
+Info (12128): Elaborating entity "one_shot" for hierarchy "keyboard:keyboard_inst|one_shot:oneshot_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/keyboard.vhd Line: 38
+Info (12128): Elaborating entity "scancode_decoder" for hierarchy "scancode_decoder:decoder_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 136
+Info (12129): Elaborating entity "one_shot" using architecture "A:behav" for hierarchy "scancode_decoder:decoder_inst|one_shot:one_shot" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/scancode_decoder.vhd Line: 26
+Info (12128): Elaborating entity "statemachine" for hierarchy "statemachine:statemachine_inst" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 148
+Warning (10541): VHDL Signal Declaration warning at statemachine.vhd(12): used implicit default value for signal "operand1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 12
+Warning (10541): VHDL Signal Declaration warning at statemachine.vhd(12): used implicit default value for signal "operand2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 12
+Warning (10541): VHDL Signal Declaration warning at statemachine.vhd(13): used implicit default value for signal "result" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 13
+Warning (10492): VHDL Process Statement warning at statemachine.vhd(29): signal "next_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at statemachine.vhd(30): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at statemachine.vhd(31): signal "next_operator" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 31
+Warning (10631): VHDL Process Statement warning at statemachine.vhd(25): inferring latch(es) for signal or variable "state", which holds its previous value in one or more paths through the process File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Warning (10631): VHDL Process Statement warning at statemachine.vhd(25): inferring latch(es) for signal or variable "operator", which holds its previous value in one or more paths through the process File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at statemachine.vhd(39): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 39
+Warning (10631): VHDL Process Statement warning at statemachine.vhd(37): inferring latch(es) for signal or variable "next_operator", which holds its previous value in one or more paths through the process File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Warning (10631): VHDL Process Statement warning at statemachine.vhd(37): inferring latch(es) for signal or variable "next_state", which holds its previous value in one or more paths through the process File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_state.DO_RESET" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_state.FINISHED" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_state.INPUT_OP2" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_state.INPUT_OP1" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_operator.DIV" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_operator.MUL" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_operator.SUB" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_operator.ADD" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "next_operator.UNDEF" at statemachine.vhd(37) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 37
+Info (10041): Inferred latch for "operator.DIV" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "operator.MUL" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "operator.SUB" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "operator.ADD" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "operator.UNDEF" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "state.DO_RESET" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "state.FINISHED" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "state.INPUT_OP2" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (10041): Inferred latch for "state.INPUT_OP1" at statemachine.vhd(25) File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/statemachine.vhd Line: 25
+Info (12128): Elaborating entity "bcd_to_7seg" for hierarchy "bcd_to_7seg:seg0" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 186
+Info (278001): Inferred 11 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 182
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div4" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 181
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 181
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 180
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 180
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 179
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 179
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 175
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 174
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 170
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 169
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod5" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 182
+Info (12133): Instantiated megafunction "lpm_divide:Mod5" with the following parameter: File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 182
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ocm.tdf
+    Info (12023): Found entity 1: lpm_divide_ocm File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_ocm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dnh File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_dnh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_eaf.tdf
+    Info (12023): Found entity 1: alt_u_div_eaf File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_eaf.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div4" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 181
+Info (12133): Instantiated megafunction "lpm_divide:Div4" with the following parameter: File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 181
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2jm.tdf
+    Info (12023): Found entity 1: lpm_divide_2jm File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_2jm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_qlh File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_qlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_87f.tdf
+    Info (12023): Found entity 1: alt_u_div_87f File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_87f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod4" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 181
+Info (12133): Instantiated megafunction "lpm_divide:Mod4" with the following parameter: File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 181
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div3" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 180
+Info (12133): Instantiated megafunction "lpm_divide:Div3" with the following parameter: File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 180
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5jm.tdf
+    Info (12023): Found entity 1: lpm_divide_5jm File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_5jm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_tlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_tlh File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_tlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e7f.tdf
+    Info (12023): Found entity 1: alt_u_div_e7f File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_e7f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 179
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 179
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_fkm.tdf
+    Info (12023): Found entity 1: lpm_divide_fkm File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_fkm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7nh File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_7nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2af.tdf
+    Info (12023): Found entity 1: alt_u_div_2af File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_2af.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 175
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 175
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_q9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_i4f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 174
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 174
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/lpm_divide_jhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/db/alt_u_div_a4f.tdf Line: 26
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 20
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 20
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 20
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 20
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 20
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 20
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 20
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 21
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 21
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 21
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 21
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 21
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 21
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 21
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 22
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 22
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 22
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 22
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 22
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 22
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 22
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 23
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 23
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 23
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 23
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 23
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 23
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 23
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 24
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 24
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 24
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 24
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 24
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 24
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 24
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 25
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 25
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 25
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 25
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 25
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 25
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 25
+    Warning (13410): Pin "HEX6[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 26
+    Warning (13410): Pin "HEX6[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 26
+    Warning (13410): Pin "HEX6[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 26
+    Warning (13410): Pin "HEX6[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 26
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 26
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 26
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 26
+    Warning (13410): Pin "HEX7[0]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 27
+    Warning (13410): Pin "HEX7[1]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 27
+    Warning (13410): Pin "HEX7[2]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 27
+    Warning (13410): Pin "HEX7[3]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 27
+    Warning (13410): Pin "HEX7[4]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 27
+    Warning (13410): Pin "HEX7[5]" is stuck at GND File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 27
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 27
+Info (17049): 49 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 13
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 10
+    Warning (15610): No output dependent on input pin "PS2_DAT" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 17
+    Warning (15610): No output dependent on input pin "PS2_CLK" File: C:/Programming/University/basic_lab_digital_circuits/Lab 3/top_level.vhd Line: 16
+Info (21057): Implemented 60 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 56 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
+    Info: Peak virtual memory: 4817 megabytes
+    Info: Processing ended: Thu Jan 08 03:50:09 2026
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:28
+
+

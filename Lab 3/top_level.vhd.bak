@@ -1,0 +1,85 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.all;
+
+entity top_level is
+    port(
+        -- 7-segment display outputs (active low on DE2-115)
+        HEX0: out std_logic_vector(6 downto 0);
+        HEX1: out std_logic_vector(6 downto 0);
+        HEX2: out std_logic_vector(6 downto 0);
+        HEX3: out std_logic_vector(6 downto 0);
+        HEX4: out std_logic_vector(6 downto 0);
+        HEX5: out std_logic_vector(6 downto 0);
+        HEX6: out std_logic_vector(6 downto 0);
+        HEX7: out std_logic_vector(6 downto 0)
+    );
+end top_level;
+
+architecture structural of top_level is
+    -- Component declaration for bcd_to_7seg
+    component bcd_to_7seg is
+        port(
+            input: in std_logic_vector(3 downto 0);
+            output: out std_logic_vector(6 downto 0)
+        );
+    end component;
+    
+begin
+    -- Display "1" on HEX0
+    display0: bcd_to_7seg
+        port map(
+            input => "0001",
+            output => HEX0
+        );
+    
+    -- Display "2" on HEX1
+    display1: bcd_to_7seg
+        port map(
+            input => "0010",
+            output => HEX1
+        );
+    
+    -- Display "3" on HEX2
+    display2: bcd_to_7seg
+        port map(
+            input => "0011",
+            output => HEX2
+        );
+    
+    -- Display "4" on HEX3
+    display3: bcd_to_7seg
+        port map(
+            input => "0100",
+            output => HEX3
+        );
+    
+    -- Display "5" on HEX4
+    display4: bcd_to_7seg
+        port map(
+            input => "0101",
+            output => HEX4
+        );
+    
+    -- Display "6" on HEX5
+    display5: bcd_to_7seg
+        port map(
+            input => "0110",
+            output => HEX5
+        );
+    
+    -- Display "7" on HEX6
+    display6: bcd_to_7seg
+        port map(
+            input => "0111",
+            output => HEX6
+        );
+    
+    -- Display "8" on HEX7
+    display7: bcd_to_7seg
+        port map(
+            input => "1000",
+            output => HEX7
+        );
+    
+end architecture;

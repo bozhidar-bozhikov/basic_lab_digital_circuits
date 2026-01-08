@@ -1,0 +1,35 @@
+
+State Machine - |top_level|scancode_decoder:decoder_inst|next_event
+Name next_event.KEY_OTHER next_event.KEY_MUL next_event.KEY_DIV next_event.KEY_SUB next_event.KEY_ADD next_event.KEY_ENTER next_event.KEY_RESET next_event.KEY_NUM 
+next_event.KEY_NUM 0 0 0 0 0 0 0 0 
+next_event.KEY_RESET 0 0 0 0 0 0 1 1 
+next_event.KEY_ENTER 0 0 0 0 0 1 0 1 
+next_event.KEY_ADD 0 0 0 0 1 0 0 1 
+next_event.KEY_SUB 0 0 0 1 0 0 0 1 
+next_event.KEY_DIV 0 0 1 0 0 0 0 1 
+next_event.KEY_MUL 0 1 0 0 0 0 0 1 
+next_event.KEY_OTHER 1 0 0 0 0 0 0 1 
+
+State Machine - |top_level|scancode_decoder:decoder_inst|next_state
+Name next_state.RELEASE next_state.TWO next_state.ONE 
+next_state.ONE 0 0 0 
+next_state.TWO 0 1 1 
+next_state.RELEASE 1 0 1 
+
+State Machine - |top_level|scancode_decoder:decoder_inst|keyevent
+Name keyevent.KEY_NUM~reg0 keyevent.KEY_MUL~reg0 keyevent.KEY_DIV~reg0 keyevent.KEY_SUB~reg0 keyevent.KEY_ADD~reg0 keyevent.KEY_ENTER~reg0 keyevent.KEY_RESET~reg0 keyevent.KEY_OTHER~reg0 
+keyevent.KEY_OTHER~reg0 0 0 0 0 0 0 0 0 
+keyevent.KEY_RESET~reg0 0 0 0 0 0 0 1 1 
+keyevent.KEY_ENTER~reg0 0 0 0 0 0 1 0 1 
+keyevent.KEY_ADD~reg0 0 0 0 0 1 0 0 1 
+keyevent.KEY_SUB~reg0 0 0 0 1 0 0 0 1 
+keyevent.KEY_DIV~reg0 0 0 1 0 0 0 0 1 
+keyevent.KEY_MUL~reg0 0 1 0 0 0 0 0 1 
+keyevent.KEY_NUM~reg0 1 0 0 0 0 0 0 1 
+
+State Machine - |top_level|keyboard:keyboard_inst|state
+Name state.STOP state.PARITY state.DATA state.IDLE 
+state.IDLE 0 0 0 0 
+state.DATA 0 0 1 1 
+state.PARITY 0 1 0 1 
+state.STOP 1 0 0 1 
