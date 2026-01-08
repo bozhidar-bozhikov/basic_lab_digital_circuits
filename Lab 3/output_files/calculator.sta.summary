@@ -2,4 +2,172 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -169.920
+TNS   : -2178.492
+
+Type  : Slow 1200mV 85C Model Setup 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : -2.126
+TNS   : -4.571
+
+Type  : Slow 1200mV 85C Model Setup 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -1.979
+TNS   : -23.490
+
+Type  : Slow 1200mV 85C Model Hold 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : 0.293
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'keyboard:keyboard_inst|char_ready_reg'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -0.507
+TNS   : -0.507
+
+Type  : Slow 1200mV 85C Model Recovery 'PS2_CLK'
+Slack : -0.168
+TNS   : -0.168
+
+Type  : Slow 1200mV 85C Model Removal 'PS2_CLK'
+Slack : 0.565
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'keyboard:keyboard_inst|char_ready_reg'
+Slack : 0.866
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -164.968
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PS2_CLK'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -1.285
+TNS   : -19.275
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : 0.428
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -153.492
+TNS   : -1968.255
+
+Type  : Slow 1200mV 0C Model Setup 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : -1.961
+TNS   : -4.074
+
+Type  : Slow 1200mV 0C Model Setup 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -1.734
+TNS   : -20.336
+
+Type  : Slow 1200mV 0C Model Hold 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'keyboard:keyboard_inst|char_ready_reg'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -0.375
+TNS   : -0.375
+
+Type  : Slow 1200mV 0C Model Recovery 'PS2_CLK'
+Slack : 0.057
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'PS2_CLK'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'keyboard:keyboard_inst|char_ready_reg'
+Slack : 0.766
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -164.568
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PS2_CLK'
+Slack : -3.000
+TNS   : -4.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -1.285
+TNS   : -19.275
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : 0.413
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -82.546
+TNS   : -1019.319
+
+Type  : Fast 1200mV 0C Model Setup 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : -0.747
+TNS   : -0.934
+
+Type  : Fast 1200mV 0C Model Setup 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -0.494
+TNS   : -4.135
+
+Type  : Fast 1200mV 0C Model Hold 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : 0.038
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'keyboard:keyboard_inst|char_ready_reg'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'keyboard:keyboard_inst|char_ready_reg'
+Slack : 0.282
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'PS2_CLK'
+Slack : 0.288
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'keyboard:keyboard_inst|char_ready_reg'
+Slack : 0.296
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'PS2_CLK'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -146.183
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PS2_CLK'
+Slack : -3.000
+TNS   : -4.738
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'keyboard:keyboard_inst|char_ready_reg'
+Slack : -1.000
+TNS   : -15.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'scancode_decoder:decoder_inst|keyevent.KEY_ENTER~reg0'
+Slack : 0.318
+TNS   : 0.000
+
 ------------------------------------------------------------

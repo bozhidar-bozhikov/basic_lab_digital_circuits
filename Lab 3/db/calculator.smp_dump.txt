@@ -1,4 +1,19 @@
 
+State Machine - |top_level|statemachine:statemachine_inst|operator
+Name operator.DIV~reg0 operator.MUL~reg0 operator.SUB~reg0 operator.ADD~reg0 operator.UNDEF~reg0 
+operator.UNDEF~reg0 0 0 0 0 0 
+operator.ADD~reg0 0 0 0 1 1 
+operator.SUB~reg0 0 0 1 0 1 
+operator.MUL~reg0 0 1 0 0 1 
+operator.DIV~reg0 1 0 0 0 1 
+
+State Machine - |top_level|statemachine:statemachine_inst|state
+Name state.DO_RESET state.FINISHED state.INPUT_OP2 state.INPUT_OP1 
+state.INPUT_OP1 0 0 0 0 
+state.INPUT_OP2 0 0 1 1 
+state.FINISHED 0 1 0 1 
+state.DO_RESET 1 0 0 1 
+
 State Machine - |top_level|scancode_decoder:decoder_inst|next_event
 Name next_event.KEY_OTHER next_event.KEY_MUL next_event.KEY_DIV next_event.KEY_SUB next_event.KEY_ADD next_event.KEY_ENTER next_event.KEY_RESET next_event.KEY_NUM 
 next_event.KEY_NUM 0 0 0 0 0 0 0 0 
